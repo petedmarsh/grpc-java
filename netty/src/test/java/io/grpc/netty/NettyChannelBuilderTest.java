@@ -118,6 +118,13 @@ public class NettyChannelBuilderTest {
     assertThat((Set<?>) field.get(builder)).isEmpty();
   }
 
+  @Test
+  public void disableHpackDynamicTableIsFluent() {
+    NettyChannelBuilder builder = NettyChannelBuilder.forTarget("foo");
+
+    assertThat(builder.disableHpackDynamicTable()).isSameInstanceAs(builder);
+  }
+
   private void shutdown(ManagedChannel mc) throws Exception {
     mc.shutdownNow();
     assertTrue(mc.awaitTermination(1, TimeUnit.SECONDS));

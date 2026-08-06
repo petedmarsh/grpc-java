@@ -101,6 +101,11 @@ public class NettyServerBuilderTest {
   }
 
   @Test
+  public void disableHpackDynamicTableIsFluent() {
+    assertThat(builder.disableHpackDynamicTable()).isSameInstanceAs(builder);
+  }
+
+  @Test
   public void addMultipleListenAddresses() {
     builder.addListenAddress(new InetSocketAddress(8081));
     NettyServer server = builder.buildTransportServers(
