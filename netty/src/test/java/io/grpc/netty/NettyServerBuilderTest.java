@@ -101,8 +101,13 @@ public class NettyServerBuilderTest {
   }
 
   @Test
-  public void disableHpackDynamicTableIsFluent() {
-    assertThat(builder.disableHpackDynamicTable()).isSameInstanceAs(builder);
+  public void hpackDynamicTableSizeAllowsZeroAndIsFluent() {
+    assertThat(builder.hpackDynamicTableSize(0)).isSameInstanceAs(builder);
+  }
+
+  @Test
+  public void hpackDynamicTableSizeRejectsNegative() {
+    assertThrows(IllegalArgumentException.class, () -> builder.hpackDynamicTableSize(-1));
   }
 
   @Test

@@ -161,7 +161,7 @@ class NettyClientHandler extends AbstractNettyHandler {
       boolean autoFlowControl,
       int flowControlWindow,
       Set<AsciiString> neverIndexedMetadataKeys,
-      boolean disableHpackDynamicTable,
+      int hpackDynamicTableSize,
       int maxHeaderListSize,
       int softLimitHeaderListSize,
       Supplier<Stopwatch> stopwatchFactory,
@@ -176,7 +176,7 @@ class NettyClientHandler extends AbstractNettyHandler {
     Http2HeadersDecoder headersDecoder = new GrpcHttp2ClientHeadersDecoder(maxHeaderListSize);
     Http2FrameReader frameReader = new DefaultHttp2FrameReader(headersDecoder);
     Http2HeadersEncoder encoder = new GrpcHttp2HeadersEncoder(
-        sensitivityDetector(neverIndexedMetadataKeys), disableHpackDynamicTable);
+        sensitivityDetector(neverIndexedMetadataKeys), hpackDynamicTableSize);
     Http2FrameWriter frameWriter = new DefaultHttp2FrameWriter(encoder);
     Http2Connection connection = new DefaultHttp2Connection(false);
     UniformStreamByteDistributor dist = new UniformStreamByteDistributor(connection);
@@ -193,7 +193,7 @@ class NettyClientHandler extends AbstractNettyHandler {
         keepAliveManager,
         autoFlowControl,
         flowControlWindow,
-        disableHpackDynamicTable,
+        hpackDynamicTableSize,
         maxHeaderListSize,
         softLimitHeaderListSize,
         stopwatchFactory,
@@ -215,7 +215,7 @@ class NettyClientHandler extends AbstractNettyHandler {
       KeepAliveManager keepAliveManager,
       boolean autoFlowControl,
       int flowControlWindow,
-      boolean disableHpackDynamicTable,
+      int hpackDynamicTableSize,
       int maxHeaderListSize,
       int softLimitHeaderListSize,
       Supplier<Stopwatch> stopwatchFactory,
@@ -263,8 +263,8 @@ class NettyClientHandler extends AbstractNettyHandler {
     settings.initialWindowSize(flowControlWindow);
     settings.maxConcurrentStreams(0);
     settings.maxHeaderListSize(maxHeaderListSize);
-    if (disableHpackDynamicTable) {
-      settings.headerTableSize(0);
+    if (hpackDynamicTableSize != GrpcHttp2HeadersEncoder.DEFAULT_DYNAMIC_TABLE_SIZE) {
+      settings.headerTableSize(hpackDynamicTableSize);
     }
 
     return new NettyClientHandler(

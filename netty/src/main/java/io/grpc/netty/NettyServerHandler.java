@@ -165,7 +165,7 @@ class NettyServerHandler extends AbstractNettyHandler {
       boolean autoFlowControl,
       int flowControlWindow,
       Set<AsciiString> neverIndexedMetadataKeys,
-      boolean disableHpackDynamicTable,
+      int hpackDynamicTableSize,
       int maxHeaderListSize,
       int softLimitHeaderListSize,
       int maxMessageSize,
@@ -188,7 +188,7 @@ class NettyServerHandler extends AbstractNettyHandler {
         new DefaultHttp2FrameReader(headersDecoder), frameLogger);
     Http2HeadersEncoder encoder = new GrpcHttp2HeadersEncoder(
         NettyClientHandler.sensitivityDetector(neverIndexedMetadataKeys),
-        disableHpackDynamicTable);
+        hpackDynamicTableSize);
     Http2FrameWriter frameWriter =
         new Http2OutboundFrameLogger(new DefaultHttp2FrameWriter(encoder), frameLogger);
     return newHandler(
@@ -201,7 +201,7 @@ class NettyServerHandler extends AbstractNettyHandler {
         maxStreams,
         autoFlowControl,
         flowControlWindow,
-        disableHpackDynamicTable,
+        hpackDynamicTableSize,
         maxHeaderListSize,
         softLimitHeaderListSize,
         maxMessageSize,
@@ -229,7 +229,7 @@ class NettyServerHandler extends AbstractNettyHandler {
       int maxStreams,
       boolean autoFlowControl,
       int flowControlWindow,
-      boolean disableHpackDynamicTable,
+      int hpackDynamicTableSize,
       int maxHeaderListSize,
       int softLimitHeaderListSize,
       int maxMessageSize,
@@ -287,8 +287,8 @@ class NettyServerHandler extends AbstractNettyHandler {
     settings.initialWindowSize(flowControlWindow);
     settings.maxConcurrentStreams(maxStreams);
     settings.maxHeaderListSize(maxHeaderListSize);
-    if (disableHpackDynamicTable) {
-      settings.headerTableSize(0);
+    if (hpackDynamicTableSize != GrpcHttp2HeadersEncoder.DEFAULT_DYNAMIC_TABLE_SIZE) {
+      settings.headerTableSize(hpackDynamicTableSize);
     }
 
     return new NettyServerHandler(

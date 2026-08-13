@@ -110,7 +110,7 @@ public final class NettyChannelBuilder extends ForwardingChannelBuilder2<NettyCh
   private boolean autoFlowControl = DEFAULT_AUTO_FLOW_CONTROL;
   private int flowControlWindow = DEFAULT_FLOW_CONTROL_WINDOW;
   private final Set<AsciiString> neverIndexedMetadataKeys = new HashSet<>();
-  private boolean disableHpackDynamicTable;
+  private int hpackDynamicTableSize = GrpcHttp2HeadersEncoder.DEFAULT_DYNAMIC_TABLE_SIZE;
   private int maxHeaderListSize = GrpcUtil.DEFAULT_MAX_HEADER_LIST_SIZE;
   private int softLimitHeaderListSize = GrpcUtil.DEFAULT_MAX_HEADER_LIST_SIZE;
   private int maxInboundMessageSize = GrpcUtil.DEFAULT_MAX_MESSAGE_SIZE;
@@ -478,17 +478,17 @@ public final class NettyChannelBuilder extends ForwardingChannelBuilder2<NettyCh
   }
 
   /**
-   * Disables use of the HPACK dynamic table for HTTP/2 header compression.
+   * Sets the maximum HPACK dynamic table size, in bytes, for both directions of a connection.
+   * The peer may advertise a smaller maximum for headers encoded by this endpoint. A value of
+   * zero disables the dynamic table while retaining HPACK static-table references and Huffman
+   * encoding. By default, HTTP/2's standard 4 KiB capacity is used.
    *
-   * <p>HPACK itself remains enabled, as required by HTTP/2. Static table references may still be
-   * used. Disabling the dynamic table reduces per-connection memory usage, but can increase the
-   * size of header blocks. The inbound dynamic table is disabled after the peer acknowledges the
-   * corresponding HTTP/2 setting, and requires a peer that correctly implements that setting. By
-   * default, the dynamic table is enabled.
+   * @throws IllegalArgumentException if {@code bytes} is negative
    */
   @CanIgnoreReturnValue
-  public NettyChannelBuilder disableHpackDynamicTable() {
-    disableHpackDynamicTable = true;
+  public NettyChannelBuilder hpackDynamicTableSize(int bytes) {
+    checkArgument(bytes >= 0, "hpackDynamicTableSize must not be negative: %s", bytes);
+    hpackDynamicTableSize = bytes;
     return this;
   }
 
@@ -685,7 +685,7 @@ public final class NettyChannelBuilder extends ForwardingChannelBuilder2<NettyCh
         autoFlowControl,
         flowControlWindow,
         neverIndexedMetadataKeys,
-        disableHpackDynamicTable,
+        hpackDynamicTableSize,
         maxInboundMessageSize,
         maxHeaderListSize,
         softLimitHeaderListSize,
@@ -830,7 +830,7 @@ public final class NettyChannelBuilder extends ForwardingChannelBuilder2<NettyCh
     private final boolean autoFlowControl;
     private final int flowControlWindow;
     private final Set<AsciiString> neverIndexedMetadataKeys;
-    private final boolean disableHpackDynamicTable;
+    private final int hpackDynamicTableSize;
     private final int maxMessageSize;
     private final int maxHeaderListSize;
     private final int softLimitHeaderListSize;
@@ -853,7 +853,7 @@ public final class NettyChannelBuilder extends ForwardingChannelBuilder2<NettyCh
         boolean autoFlowControl,
         int flowControlWindow,
         Set<AsciiString> neverIndexedMetadataKeys,
-        boolean disableHpackDynamicTable,
+        int hpackDynamicTableSize,
         int maxMessageSize,
         int maxHeaderListSize,
         int softLimitHeaderListSize,
@@ -873,7 +873,7 @@ public final class NettyChannelBuilder extends ForwardingChannelBuilder2<NettyCh
       this.flowControlWindow = flowControlWindow;
       this.neverIndexedMetadataKeys = Collections.unmodifiableSet(
           new HashSet<>(checkNotNull(neverIndexedMetadataKeys, "neverIndexedMetadataKeys")));
-      this.disableHpackDynamicTable = disableHpackDynamicTable;
+      this.hpackDynamicTableSize = hpackDynamicTableSize;
       this.maxMessageSize = maxMessageSize;
       this.maxHeaderListSize = maxHeaderListSize;
       this.softLimitHeaderListSize = softLimitHeaderListSize;
@@ -924,7 +924,7 @@ public final class NettyChannelBuilder extends ForwardingChannelBuilder2<NettyCh
               autoFlowControl,
               flowControlWindow,
               neverIndexedMetadataKeys,
-              disableHpackDynamicTable,
+              hpackDynamicTableSize,
               maxMessageSize,
               maxHeaderListSize,
               softLimitHeaderListSize,
@@ -965,7 +965,7 @@ public final class NettyChannelBuilder extends ForwardingChannelBuilder2<NettyCh
               autoFlowControl,
               flowControlWindow,
               neverIndexedMetadataKeys,
-              disableHpackDynamicTable,
+              hpackDynamicTableSize,
               maxMessageSize,
               maxHeaderListSize,
               softLimitHeaderListSize,

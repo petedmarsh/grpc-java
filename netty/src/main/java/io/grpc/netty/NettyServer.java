@@ -95,7 +95,7 @@ class NettyServer implements InternalServer, InternalWithLogId {
   private final boolean autoFlowControl;
   private final int flowControlWindow;
   private final Set<AsciiString> neverIndexedMetadataKeys;
-  private final boolean disableHpackDynamicTable;
+  private final int hpackDynamicTableSize;
   private final int maxMessageSize;
   private final int maxHeaderListSize;
   private final int softLimitHeaderListSize;
@@ -135,7 +135,7 @@ class NettyServer implements InternalServer, InternalWithLogId {
       boolean autoFlowControl,
       int flowControlWindow,
       Set<AsciiString> neverIndexedMetadataKeys,
-      boolean disableHpackDynamicTable,
+      int hpackDynamicTableSize,
       int maxMessageSize,
       int maxHeaderListSize,
       int softLimitHeaderListSize,
@@ -169,7 +169,7 @@ class NettyServer implements InternalServer, InternalWithLogId {
     this.flowControlWindow = flowControlWindow;
     this.neverIndexedMetadataKeys = Collections.unmodifiableSet(
         new HashSet<>(checkNotNull(neverIndexedMetadataKeys, "neverIndexedMetadataKeys")));
-    this.disableHpackDynamicTable = disableHpackDynamicTable;
+    this.hpackDynamicTableSize = hpackDynamicTableSize;
     this.maxMessageSize = maxMessageSize;
     this.maxHeaderListSize = maxHeaderListSize;
     this.softLimitHeaderListSize = softLimitHeaderListSize;
@@ -276,7 +276,7 @@ class NettyServer implements InternalServer, InternalWithLogId {
                     autoFlowControl,
                     flowControlWindow,
                     neverIndexedMetadataKeys,
-                    disableHpackDynamicTable,
+                    hpackDynamicTableSize,
                     maxMessageSize,
                     maxHeaderListSize,
                     softLimitHeaderListSize,
