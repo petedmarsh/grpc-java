@@ -472,6 +472,7 @@ public class NettyServerHandlerTest extends NettyHandlerTestBase<NettyServerHand
         any(ChannelHandlerContext.class), captor.capture(), any(ChannelPromise.class));
 
     assertEquals(maxHeaderListSize, captor.getValue().maxHeaderListSize().longValue());
+    assertEquals(8192, captor.getValue().headerTableSize().longValue());
   }
 
   @Test

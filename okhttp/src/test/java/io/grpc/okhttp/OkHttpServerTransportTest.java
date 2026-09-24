@@ -1306,6 +1306,8 @@ public class OkHttpServerTransportTest {
     ArgumentCaptor<Settings> settingsCaptor = ArgumentCaptor.forClass(Settings.class);
     verify(clientFramesRead).settings(eq(false), settingsCaptor.capture());
     final Settings settings = settingsCaptor.getValue();
+    assertThat(OkHttpSettingsUtil.get(settings, OkHttpSettingsUtil.HEADER_TABLE_SIZE))
+        .isEqualTo(8192);
     assertThat(OkHttpSettingsUtil.get(settings, OkHttpSettingsUtil.MAX_CONCURRENT_STREAMS))
         .isEqualTo(maxConcurrentCallsPerConnection);
 

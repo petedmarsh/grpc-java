@@ -155,7 +155,7 @@ final class Hpack {
     }
 
     /**
-     * Called by the reader when the peer sent {@link Settings#HEADER_TABLE_SIZE}.
+     * Sets the limit advertised by this endpoint via {@link Settings#HEADER_TABLE_SIZE}.
      * While this establishes the maximum dynamic table size, the
      * {@link #maxDynamicTableByteCount} set during processing may limit the
      * table size to a smaller amount.

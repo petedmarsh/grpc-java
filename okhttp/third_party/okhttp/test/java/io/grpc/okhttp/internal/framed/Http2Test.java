@@ -20,6 +20,7 @@ import static io.grpc.okhttp.internal.framed.Http2.FLAG_NONE;
 import static io.grpc.okhttp.internal.framed.Http2.FLAG_PADDED;
 import static io.grpc.okhttp.internal.framed.Http2.TYPE_DATA;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 
@@ -44,6 +45,40 @@ public class Http2Test {
   @Mock
   private FrameReader.Handler mockHandler;
   private final int STREAM_ID = 6;
+
+  @Test
+  public void newReaderAllowsAdvertisedHeaderTableSize() {
+    Http2.Reader reader = (Http2.Reader) new Http2().newReader(new Buffer(), true);
+
+    assertEquals(8192, reader.hpackReader.maxDynamicTableByteCount());
+  }
+
+  @Test
+  public void peerHeaderTableSizeUpdatesWriter() throws IOException {
+    Buffer sink = new Buffer();
+    Http2.Writer writer = new Http2.Writer(sink, true);
+    writer.ackSettings(new Settings().set(Settings.HEADER_TABLE_SIZE, 0, 8192));
+    sink.skip(9); // SETTINGS ACK frame.
+
+    writer.headers(false, 3, Arrays.asList(new Header("custom-key", "custom-value")));
+    sink.skip(9); // HEADERS frame header.
+
+    assertEquals(0x3f, sink.readByte() & 0xff);
+    assertEquals(0xe1, sink.readByte() & 0xff);
+    assertEquals(0x3f, sink.readByte() & 0xff);
+  }
+
+  @Test
+  public void peerHeaderTableSizeDoesNotChangeInboundDecoder() throws IOException {
+    Buffer frames = new Buffer();
+    new Http2.Writer(frames, false)
+        .settings(new Settings().set(Settings.HEADER_TABLE_SIZE, 0, 0));
+    Http2.Reader reader = (Http2.Reader) new Http2().newReader(frames, true);
+
+    assertTrue(reader.nextFrame(mockHandler));
+
+    assertEquals(8192, reader.hpackReader.maxDynamicTableByteCount());
+  }
 
   @Test
   public void dataFrameNoPadding() throws IOException {

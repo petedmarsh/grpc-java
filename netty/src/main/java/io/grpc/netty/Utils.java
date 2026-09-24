@@ -76,6 +76,7 @@ import javax.net.ssl.SSLException;
  */
 class Utils {
   private static final Logger logger = Logger.getLogger(Utils.class.getName());
+  static final int DEFAULT_HPACK_DYNAMIC_TABLE_SIZE = 8 * 1024;
 
   public static final AsciiString STATUS_OK = AsciiString.of("200");
   public static final AsciiString HTTP_METHOD = AsciiString.of(GrpcUtil.HTTP_METHOD);

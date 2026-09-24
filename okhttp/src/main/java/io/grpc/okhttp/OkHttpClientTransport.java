@@ -827,6 +827,8 @@ class OkHttpClientTransport implements ConnectionClientTransport, TransportExcep
     synchronized (lock) {
       frameWriter.connectionPreface();
       Settings settings = new Settings();
+      OkHttpSettingsUtil.set(settings, OkHttpSettingsUtil.HEADER_TABLE_SIZE,
+          OkHttpSettingsUtil.DEFAULT_HPACK_DYNAMIC_TABLE_SIZE);
       OkHttpSettingsUtil.set(settings, OkHttpSettingsUtil.INITIAL_WINDOW_SIZE, initialWindowSize);
       frameWriter.settings(settings);
       if (initialWindowSize > DEFAULT_WINDOW_SIZE) {

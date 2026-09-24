@@ -16,12 +16,15 @@
 
 package io.grpc.okhttp;
 
+import io.grpc.okhttp.internal.framed.Http2;
 import io.grpc.okhttp.internal.framed.Settings;
 
 /**
  * A utility class help gRPC get/set the necessary fields of OkHttp's Settings.
  */
 class OkHttpSettingsUtil {
+  static final int HEADER_TABLE_SIZE = 1; // HTTP/2 SETTINGS_HEADER_TABLE_SIZE.
+  public static final int DEFAULT_HPACK_DYNAMIC_TABLE_SIZE = Http2.DEFAULT_HPACK_DYNAMIC_TABLE_SIZE;
   public static final int MAX_CONCURRENT_STREAMS = Settings.MAX_CONCURRENT_STREAMS;
   public static final int INITIAL_WINDOW_SIZE = Settings.INITIAL_WINDOW_SIZE;
   public static final int MAX_HEADER_LIST_SIZE = Settings.MAX_HEADER_LIST_SIZE;

@@ -445,6 +445,7 @@ public class OkHttpClientTransportTest {
     ArgumentCaptor<Settings> settings = ArgumentCaptor.forClass(Settings.class);
     verify(frameWriter, timeout(TIME_OUT_MS)).settings(settings.capture());
     assertEquals(65535, settings.getValue().get(7));
+    assertEquals(8192, settings.getValue().get(OkHttpSettingsUtil.HEADER_TABLE_SIZE));
   }
 
   /**

@@ -226,6 +226,8 @@ final class OkHttpServerTransport implements ServerTransport,
         // return.
         frameWriter.connectionPreface();
         Settings settings = new Settings();
+        OkHttpSettingsUtil.set(settings, OkHttpSettingsUtil.HEADER_TABLE_SIZE,
+            OkHttpSettingsUtil.DEFAULT_HPACK_DYNAMIC_TABLE_SIZE);
         OkHttpSettingsUtil.set(settings,
             OkHttpSettingsUtil.INITIAL_WINDOW_SIZE, config.flowControlWindow);
         OkHttpSettingsUtil.set(settings,

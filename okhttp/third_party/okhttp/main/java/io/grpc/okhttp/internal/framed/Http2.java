@@ -58,6 +58,8 @@ public final class Http2 implements Variant {
 
   /** The initial max frame size, applied independently writing to, or reading from the peer. */
   static final int INITIAL_MAX_FRAME_SIZE = 0x4000; // 16384
+  /** The HPACK table size advertised by gRPC's initial SETTINGS. */
+  public static final int DEFAULT_HPACK_DYNAMIC_TABLE_SIZE = 8 * 1024;
 
   static final byte TYPE_DATA = 0x0;
   static final byte TYPE_HEADERS = 0x1;
@@ -80,11 +82,11 @@ public final class Http2 implements Variant {
   static final byte FLAG_COMPRESSED = 0x20; // Used for data.
 
   /**
-   * Creates a frame reader with max header table size of 4096 and data frame
+   * Creates a frame reader with max header table size of 8192 and data frame
    * compression disabled.
    */
   @Override public FrameReader newReader(BufferedSource source, boolean client) {
-    return new Reader(source, 4096, client);
+    return new Reader(source, DEFAULT_HPACK_DYNAMIC_TABLE_SIZE, client);
   }
 
   @Override public io.grpc.okhttp.internal.framed.FrameWriter newWriter(BufferedSink sink, boolean client) {
@@ -312,9 +314,6 @@ public final class Http2 implements Variant {
         settings.set(id, 0, value);
       }
       handler.settings(false, settings);
-      if (settings.getHeaderTableSize() >= 0) {
-        hpackReader.headerTableSizeSetting(settings.getHeaderTableSize());
-      }
     }
 
     private void readPushPromise(Handler handler, int length, byte flags, int streamId)
@@ -397,6 +396,10 @@ public final class Http2 implements Variant {
     @Override public synchronized void ackSettings(io.grpc.okhttp.internal.framed.Settings peerSettings) throws IOException {
       if (closed) throw new IOException("closed");
       this.maxFrameSize = peerSettings.getMaxFrameSize(maxFrameSize);
+      int headerTableSize = peerSettings.getHeaderTableSize();
+      if (headerTableSize >= 0) {
+        hpackWriter.resizeHeaderTable(headerTableSize);
+      }
       int length = 0;
       byte type = TYPE_SETTINGS;
       byte flags = FLAG_ACK;

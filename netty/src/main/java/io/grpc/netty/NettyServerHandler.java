@@ -287,6 +287,7 @@ class NettyServerHandler extends AbstractNettyHandler {
     settings.initialWindowSize(flowControlWindow);
     settings.maxConcurrentStreams(maxStreams);
     settings.maxHeaderListSize(maxHeaderListSize);
+    settings.headerTableSize(Utils.DEFAULT_HPACK_DYNAMIC_TABLE_SIZE);
 
     return new NettyServerHandler(
         channelUnused,

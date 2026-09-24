@@ -231,6 +231,15 @@ public class NettyClientHandlerTest extends NettyHandlerTestBase<NettyClientHand
   }
 
   @Test
+  public void shouldAdvertiseEightKiBHpackDynamicTable() {
+    ArgumentCaptor<Http2Settings> captor = ArgumentCaptor.forClass(Http2Settings.class);
+    verifyWrite().writeSettings(
+        any(ChannelHandlerContext.class), captor.capture(), any(ChannelPromise.class));
+
+    assertThat(captor.getValue().headerTableSize()).isEqualTo(8192);
+  }
+
+  @Test
   @SuppressWarnings("InlineMeInliner")
   public void sendLargerThanSoftLimitHeaderMayFail() throws Exception {
     maxHeaderListSize = 8000;
