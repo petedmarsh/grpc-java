@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.netty:netty-codec-http2:4.2.18.Final'
+    implementation 'org.openjdk.jmh:jmh-core:1.37'
+    annotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
+}
+
+sourceSets.main.java {
+    srcDir '../src/jmh/java'
+    include 'io/grpc/benchmarks/netty/HpackTableSize*.java'
+}
+
+application {
+    mainClass = 'org.openjdk.jmh.Main'
+}
+
+tasks.register('validateFixtures', JavaExec) {
+    dependsOn classes
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'io.grpc.benchmarks.netty.HpackTableSizeBenchmark'
+    jvmArgs '-Xms512m', '-Xmx512m'
+}

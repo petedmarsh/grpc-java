@@ -1,0 +1,1061 @@
+# JMH version: 1.37
+# VM version: JDK 21.0.12, OpenJDK 64-Bit Server VM, 21.0.12
+# VM invoker: /opt/homebrew/Cellar/openjdk@21/21.0.12/libexec/openjdk.jdk/Contents/Home/bin/java
+# VM options: -Xms512m -Xmx512m -XX:+UseG1GC
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode
+# Parameters: (buckets = 16, peerTableBytes = -1, workload = MIXED_SHORT)
+
+# Run progress: 0,00% complete, ETA 00:02:24
+# Fork: 1 of 3
+# Warmup Iteration   1: 1363,227 ns/op
+# Warmup Iteration   2: 1282,864 ns/op
+# Warmup Iteration   3: 1277,633 ns/op
+Iteration   1: 1281,512 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1267,722 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 1286,463 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1262,849 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   3: 1285,919 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1263,382 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   4: 1287,531 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1261,801 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   5: 1284,131 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1265,037 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+
+# Run progress: 5,56% complete, ETA 00:02:19
+# Fork: 2 of 3
+# Warmup Iteration   1: 1350,928 ns/op
+# Warmup Iteration   2: 1269,959 ns/op
+# Warmup Iteration   3: 1264,439 ns/op
+Iteration   1: 1265,741 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1283,527 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 1308,739 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1241,351 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   3: 1268,898 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1280,328 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 1265,590 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1283,687 MB/sec
+                 gc.alloc.rate.norm: 1703,721 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   5: 1270,461 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1278,652 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+
+# Run progress: 11,11% complete, ETA 00:02:11
+# Fork: 3 of 3
+# Warmup Iteration   1: 1369,955 ns/op
+# Warmup Iteration   2: 1283,224 ns/op
+# Warmup Iteration   3: 1287,895 ns/op
+Iteration   1: 1276,981 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1272,234 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 1280,288 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1268,938 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   3: 1277,186 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1272,013 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   4: 1283,760 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1265,517 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   5: 1275,365 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1273,726 MB/sec
+                 gc.alloc.rate.norm: 1703,720 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+
+
+Result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode":
+  1279,904 ±(99.9%) 11,629 ns/op [Average]
+  (min, avg, max) = (1265,590, 1279,904, 1308,739), stdev = 10,878
+  CI (99.9%): [1268,275, 1291,533] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:encodedBytes":
+  276,617 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (276,617, 276,617, 276,618), stdev = 0,001
+  CI (99.9%): [276,617, 276,618] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate":
+  1269,384 ±(99.9%) 11,440 MB/sec [Average]
+  (min, avg, max) = (1241,351, 1269,384, 1283,687), stdev = 10,701
+  CI (99.9%): [1257,945, 1280,824] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate.norm":
+  1703,720 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (1703,720, 1703,720, 1703,721), stdev = 0,001
+  CI (99.9%): [1703,720, 1703,721] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.count":
+  62,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (4,000, 4,133, 5,000), stdev = 0,352
+  CI (99.9%): [62,000, 62,000] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.time":
+  33,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (2,000, 2,200, 3,000), stdev = 0,414
+  CI (99.9%): [33,000, 33,000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12, OpenJDK 64-Bit Server VM, 21.0.12
+# VM invoker: /opt/homebrew/Cellar/openjdk@21/21.0.12/libexec/openjdk.jdk/Contents/Home/bin/java
+# VM options: -Xms512m -Xmx512m -XX:+UseG1GC
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode
+# Parameters: (buckets = 16, peerTableBytes = -1, workload = MIXED_LARGE)
+
+# Run progress: 16,67% complete, ETA 00:02:03
+# Fork: 1 of 3
+# Warmup Iteration   1: 1572,296 ns/op
+# Warmup Iteration   2: 1492,817 ns/op
+# Warmup Iteration   3: 1480,032 ns/op
+Iteration   1: 1480,441 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1252,358 MB/sec
+                 gc.alloc.rate.norm: 1944,330 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 1478,123 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1254,323 MB/sec
+                 gc.alloc.rate.norm: 1944,335 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   3: 1477,488 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1254,861 MB/sec
+                 gc.alloc.rate.norm: 1944,331 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   4: 1480,391 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1252,379 MB/sec
+                 gc.alloc.rate.norm: 1944,334 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   5: 1476,941 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1255,233 MB/sec
+                 gc.alloc.rate.norm: 1944,335 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+
+# Run progress: 22,22% complete, ETA 00:01:55
+# Fork: 2 of 3
+# Warmup Iteration   1: 1604,560 ns/op
+# Warmup Iteration   2: 1512,668 ns/op
+# Warmup Iteration   3: 1501,209 ns/op
+Iteration   1: 1505,105 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1231,839 MB/sec
+                 gc.alloc.rate.norm: 1944,331 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 1507,121 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1230,197 MB/sec
+                 gc.alloc.rate.norm: 1944,336 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   3: 1504,990 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1231,929 MB/sec
+                 gc.alloc.rate.norm: 1944,331 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   4: 1502,462 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1234,019 MB/sec
+                 gc.alloc.rate.norm: 1944,333 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 1505,164 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1231,707 MB/sec
+                 gc.alloc.rate.norm: 1944,331 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+
+# Run progress: 27,78% complete, ETA 00:01:47
+# Fork: 3 of 3
+# Warmup Iteration   1: 1569,294 ns/op
+# Warmup Iteration   2: 1486,166 ns/op
+# Warmup Iteration   3: 1467,924 ns/op
+Iteration   1: 1473,995 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1257,819 MB/sec
+                 gc.alloc.rate.norm: 1944,331 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 1470,692 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1260,660 MB/sec
+                 gc.alloc.rate.norm: 1944,334 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   3: 1464,446 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1266,044 MB/sec
+                 gc.alloc.rate.norm: 1944,334 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   4: 1468,241 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1262,768 MB/sec
+                 gc.alloc.rate.norm: 1944,332 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   5: 1469,257 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1261,802 MB/sec
+                 gc.alloc.rate.norm: 1944,330 B/op
+                 gc.count:           4,000 counts
+                 gc.time:            3,000 ms
+
+
+
+Result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode":
+  1484,324 ±(99.9%) 16,868 ns/op [Average]
+  (min, avg, max) = (1464,446, 1484,324, 1507,121), stdev = 15,779
+  CI (99.9%): [1467,455, 1501,192] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:encodedBytes":
+  1428,949 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (1428,948, 1428,949, 1428,950), stdev = 0,001
+  CI (99.9%): [1428,948, 1428,949] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate":
+  1249,196 ±(99.9%) 14,126 MB/sec [Average]
+  (min, avg, max) = (1230,197, 1249,196, 1266,044), stdev = 13,213
+  CI (99.9%): [1235,070, 1263,321] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate.norm":
+  1944,333 ±(99.9%) 0,002 B/op [Average]
+  (min, avg, max) = (1944,330, 1944,333, 1944,336), stdev = 0,002
+  CI (99.9%): [1944,331, 1944,335] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.count":
+  61,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (4,000, 4,067, 5,000), stdev = 0,258
+  CI (99.9%): [61,000, 61,000] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.time":
+  32,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (2,000, 2,133, 3,000), stdev = 0,352
+  CI (99.9%): [32,000, 32,000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12, OpenJDK 64-Bit Server VM, 21.0.12
+# VM invoker: /opt/homebrew/Cellar/openjdk@21/21.0.12/libexec/openjdk.jdk/Contents/Home/bin/java
+# VM options: -Xms512m -Xmx512m -XX:+UseG1GC
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode
+# Parameters: (buckets = 64, peerTableBytes = -1, workload = MIXED_SHORT)
+
+# Run progress: 33,33% complete, ETA 00:01:38
+# Fork: 1 of 3
+# Warmup Iteration   1: 1025,977 ns/op
+# Warmup Iteration   2: 964,230 ns/op
+# Warmup Iteration   3: 958,995 ns/op
+Iteration   1: 962,760 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1687,446 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 961,508 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1689,647 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 964,238 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1684,855 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 972,473 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1670,593 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 956,482 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1698,392 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+
+# Run progress: 38,89% complete, ETA 00:01:30
+# Fork: 2 of 3
+# Warmup Iteration   1: 1025,703 ns/op
+# Warmup Iteration   2: 965,066 ns/op
+# Warmup Iteration   3: 960,981 ns/op
+Iteration   1: 960,137 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1692,057 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 965,615 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1682,439 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            4,000 ms
+
+Iteration   3: 960,847 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1690,794 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   4: 964,332 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1684,693 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            4,000 ms
+
+Iteration   5: 957,857 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1695,953 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+
+# Run progress: 44,44% complete, ETA 00:01:22
+# Fork: 3 of 3
+# Warmup Iteration   1: 1024,867 ns/op
+# Warmup Iteration   2: 965,796 ns/op
+# Warmup Iteration   3: 959,965 ns/op
+Iteration   1: 956,029 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1699,326 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 956,418 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1698,646 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 954,335 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1702,347 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   4: 960,433 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1691,543 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            4,000 ms
+
+Iteration   5: 959,353 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1693,315 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+
+
+Result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode":
+  960,854 ±(99.9%) 4,963 ns/op [Average]
+  (min, avg, max) = (954,335, 960,854, 972,473), stdev = 4,643
+  CI (99.9%): [955,891, 965,818] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:encodedBytes":
+  276,617 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (276,617, 276,617, 276,618), stdev = 0,001
+  CI (99.9%): [276,617, 276,618] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate":
+  1690,803 ±(99.9%) 8,684 MB/sec [Average]
+  (min, avg, max) = (1670,593, 1690,803, 1702,347), stdev = 8,123
+  CI (99.9%): [1682,119, 1699,487] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate.norm":
+  1703,718 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (1703,717, 1703,718, 1703,718), stdev = 0,001
+  CI (99.9%): [1703,717, 1703,718] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.count":
+  84,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (5,000, 5,600, 6,000), stdev = 0,507
+  CI (99.9%): [84,000, 84,000] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.time":
+  44,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (2,000, 2,933, 4,000), stdev = 0,704
+  CI (99.9%): [44,000, 44,000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12, OpenJDK 64-Bit Server VM, 21.0.12
+# VM invoker: /opt/homebrew/Cellar/openjdk@21/21.0.12/libexec/openjdk.jdk/Contents/Home/bin/java
+# VM options: -Xms512m -Xmx512m -XX:+UseG1GC
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode
+# Parameters: (buckets = 64, peerTableBytes = -1, workload = MIXED_LARGE)
+
+# Run progress: 50,00% complete, ETA 00:01:14
+# Fork: 1 of 3
+# Warmup Iteration   1: 1260,110 ns/op
+# Warmup Iteration   2: 1198,288 ns/op
+# Warmup Iteration   3: 1192,769 ns/op
+Iteration   1: 1194,356 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1552,333 MB/sec
+                 gc.alloc.rate.norm: 1944,327 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 1192,889 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1554,240 MB/sec
+                 gc.alloc.rate.norm: 1944,335 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   3: 1194,420 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1552,259 MB/sec
+                 gc.alloc.rate.norm: 1944,331 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 1192,316 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1554,999 MB/sec
+                 gc.alloc.rate.norm: 1944,330 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 1195,002 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1551,374 MB/sec
+                 gc.alloc.rate.norm: 1944,333 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+
+# Run progress: 55,56% complete, ETA 00:01:05
+# Fork: 2 of 3
+# Warmup Iteration   1: 1287,408 ns/op
+# Warmup Iteration   2: 1233,779 ns/op
+# Warmup Iteration   3: 1215,441 ns/op
+Iteration   1: 1213,943 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1527,289 MB/sec
+                 gc.alloc.rate.norm: 1944,328 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 1212,092 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1529,609 MB/sec
+                 gc.alloc.rate.norm: 1944,335 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 1217,926 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1522,299 MB/sec
+                 gc.alloc.rate.norm: 1944,333 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 1218,991 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1520,972 MB/sec
+                 gc.alloc.rate.norm: 1944,328 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   5: 1217,127 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1523,168 MB/sec
+                 gc.alloc.rate.norm: 1944,333 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+
+# Run progress: 61,11% complete, ETA 00:00:57
+# Fork: 3 of 3
+# Warmup Iteration   1: 1267,274 ns/op
+# Warmup Iteration   2: 1202,318 ns/op
+# Warmup Iteration   3: 1196,107 ns/op
+Iteration   1: 1195,699 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1550,596 MB/sec
+                 gc.alloc.rate.norm: 1944,328 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 1194,315 ns/op
+                 encodedBytes:       1428,951 B/op
+                 gc.alloc.rate:      1552,402 MB/sec
+                 gc.alloc.rate.norm: 1944,336 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 1194,227 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1552,497 MB/sec
+                 gc.alloc.rate.norm: 1944,329 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   4: 1193,968 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1552,850 MB/sec
+                 gc.alloc.rate.norm: 1944,328 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 1196,728 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1549,135 MB/sec
+                 gc.alloc.rate.norm: 1944,330 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+
+
+Result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode":
+  1201,600 ±(99.9%) 11,451 ns/op [Average]
+  (min, avg, max) = (1192,316, 1201,600, 1218,991), stdev = 10,712
+  CI (99.9%): [1190,148, 1213,051] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:encodedBytes":
+  1428,949 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (1428,948, 1428,949, 1428,951), stdev = 0,001
+  CI (99.9%): [1428,948, 1428,950] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate":
+  1543,068 ±(99.9%) 14,617 MB/sec [Average]
+  (min, avg, max) = (1520,972, 1543,068, 1554,999), stdev = 13,673
+  CI (99.9%): [1528,451, 1557,686] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate.norm":
+  1944,331 ±(99.9%) 0,003 B/op [Average]
+  (min, avg, max) = (1944,327, 1944,331, 1944,336), stdev = 0,003
+  CI (99.9%): [1944,328, 1944,334] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.count":
+  77,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (5,000, 5,133, 6,000), stdev = 0,352
+  CI (99.9%): [77,000, 77,000] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.time":
+  40,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (2,000, 2,667, 3,000), stdev = 0,488
+  CI (99.9%): [40,000, 40,000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12, OpenJDK 64-Bit Server VM, 21.0.12
+# VM invoker: /opt/homebrew/Cellar/openjdk@21/21.0.12/libexec/openjdk.jdk/Contents/Home/bin/java
+# VM options: -Xms512m -Xmx512m -XX:+UseG1GC
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode
+# Parameters: (buckets = 128, peerTableBytes = -1, workload = MIXED_SHORT)
+
+# Run progress: 66,67% complete, ETA 00:00:49
+# Fork: 1 of 3
+# Warmup Iteration   1: 980,597 ns/op
+# Warmup Iteration   2: 922,470 ns/op
+# Warmup Iteration   3: 914,635 ns/op
+Iteration   1: 919,195 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1767,430 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 918,679 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1768,399 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 918,145 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1769,435 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 920,342 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1765,207 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 917,573 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1770,427 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            4,000 ms
+
+
+# Run progress: 72,22% complete, ETA 00:00:41
+# Fork: 2 of 3
+# Warmup Iteration   1: 979,557 ns/op
+# Warmup Iteration   2: 921,326 ns/op
+# Warmup Iteration   3: 975,423 ns/op
+Iteration   1: 925,779 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1754,835 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 922,564 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1760,969 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 922,481 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1761,124 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 920,261 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1765,384 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 923,109 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1759,779 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+
+# Run progress: 77,78% complete, ETA 00:00:32
+# Fork: 3 of 3
+# Warmup Iteration   1: 974,911 ns/op
+# Warmup Iteration   2: 920,023 ns/op
+# Warmup Iteration   3: 916,915 ns/op
+Iteration   1: 942,364 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1723,973 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+Iteration   2: 921,745 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1762,531 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            4,000 ms
+
+Iteration   3: 918,741 ns/op
+                 encodedBytes:       276,618 B/op
+                 gc.alloc.rate:      1768,300 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 920,848 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1764,257 MB/sec
+                 gc.alloc.rate.norm: 1703,717 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 916,227 ns/op
+                 encodedBytes:       276,617 B/op
+                 gc.alloc.rate:      1773,009 MB/sec
+                 gc.alloc.rate.norm: 1703,718 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+
+
+Result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode":
+  921,870 ±(99.9%) 6,608 ns/op [Average]
+  (min, avg, max) = (916,227, 921,870, 942,364), stdev = 6,181
+  CI (99.9%): [915,262, 928,479] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:encodedBytes":
+  276,617 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (276,617, 276,617, 276,618), stdev = 0,001
+  CI (99.9%): [276,617, 276,618] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate":
+  1762,337 ±(99.9%) 12,412 MB/sec [Average]
+  (min, avg, max) = (1723,973, 1762,337, 1773,009), stdev = 11,610
+  CI (99.9%): [1749,925, 1774,749] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate.norm":
+  1703,718 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (1703,717, 1703,718, 1703,718), stdev = 0,001
+  CI (99.9%): [1703,717, 1703,718] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.count":
+  87,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (5,000, 5,800, 6,000), stdev = 0,414
+  CI (99.9%): [87,000, 87,000] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.time":
+  45,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (2,000, 3,000, 4,000), stdev = 0,535
+  CI (99.9%): [45,000, 45,000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 21.0.12, OpenJDK 64-Bit Server VM, 21.0.12
+# VM invoker: /opt/homebrew/Cellar/openjdk@21/21.0.12/libexec/openjdk.jdk/Contents/Home/bin/java
+# VM options: -Xms512m -Xmx512m -XX:+UseG1GC
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 5 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode
+# Parameters: (buckets = 128, peerTableBytes = -1, workload = MIXED_LARGE)
+
+# Run progress: 83,33% complete, ETA 00:00:24
+# Fork: 1 of 3
+# Warmup Iteration   1: 1195,604 ns/op
+# Warmup Iteration   2: 1127,653 ns/op
+# Warmup Iteration   3: 1125,106 ns/op
+Iteration   1: 1124,227 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1649,175 MB/sec
+                 gc.alloc.rate.norm: 1944,331 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 1126,013 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1646,563 MB/sec
+                 gc.alloc.rate.norm: 1944,327 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 1127,106 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1644,979 MB/sec
+                 gc.alloc.rate.norm: 1944,332 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 1126,584 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1645,735 MB/sec
+                 gc.alloc.rate.norm: 1944,330 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 1125,095 ns/op
+                 encodedBytes:       1428,947 B/op
+                 gc.alloc.rate:      1647,785 MB/sec
+                 gc.alloc.rate.norm: 1944,326 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+
+# Run progress: 88,89% complete, ETA 00:00:16
+# Fork: 2 of 3
+# Warmup Iteration   1: 1201,381 ns/op
+# Warmup Iteration   2: 1127,937 ns/op
+# Warmup Iteration   3: 1127,825 ns/op
+Iteration   1: 1129,353 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1641,697 MB/sec
+                 gc.alloc.rate.norm: 1944,333 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 1132,696 ns/op
+                 encodedBytes:       1428,947 B/op
+                 gc.alloc.rate:      1636,834 MB/sec
+                 gc.alloc.rate.norm: 1944,324 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 1130,791 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1639,606 MB/sec
+                 gc.alloc.rate.norm: 1944,334 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 1134,439 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1634,334 MB/sec
+                 gc.alloc.rate.norm: 1944,330 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 1136,266 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1631,570 MB/sec
+                 gc.alloc.rate.norm: 1944,333 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+
+# Run progress: 94,44% complete, ETA 00:00:08
+# Fork: 3 of 3
+# Warmup Iteration   1: 1206,448 ns/op
+# Warmup Iteration   2: 1142,319 ns/op
+# Warmup Iteration   3: 1140,505 ns/op
+Iteration   1: 1141,732 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1623,897 MB/sec
+                 gc.alloc.rate.norm: 1944,332 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   2: 1140,481 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1625,682 MB/sec
+                 gc.alloc.rate.norm: 1944,328 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   3: 1139,637 ns/op
+                 encodedBytes:       1428,949 B/op
+                 gc.alloc.rate:      1626,874 MB/sec
+                 gc.alloc.rate.norm: 1944,331 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   4: 1143,871 ns/op
+                 encodedBytes:       1428,950 B/op
+                 gc.alloc.rate:      1620,861 MB/sec
+                 gc.alloc.rate.norm: 1944,334 B/op
+                 gc.count:           6,000 counts
+                 gc.time:            3,000 ms
+
+Iteration   5: 1141,053 ns/op
+                 encodedBytes:       1428,948 B/op
+                 gc.alloc.rate:      1624,734 MB/sec
+                 gc.alloc.rate.norm: 1944,328 B/op
+                 gc.count:           5,000 counts
+                 gc.time:            2,000 ms
+
+
+
+Result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode":
+  1133,290 ±(99.9%) 7,303 ns/op [Average]
+  (min, avg, max) = (1124,227, 1133,290, 1143,871), stdev = 6,831
+  CI (99.9%): [1125,987, 1140,592] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:encodedBytes":
+  1428,949 ±(99.9%) 0,001 B/op [Average]
+  (min, avg, max) = (1428,947, 1428,949, 1428,950), stdev = 0,001
+  CI (99.9%): [1428,948, 1428,950] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate":
+  1636,022 ±(99.9%) 10,538 MB/sec [Average]
+  (min, avg, max) = (1620,861, 1636,022, 1649,175), stdev = 9,857
+  CI (99.9%): [1625,484, 1646,560] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.alloc.rate.norm":
+  1944,330 ±(99.9%) 0,003 B/op [Average]
+  (min, avg, max) = (1944,324, 1944,330, 1944,334), stdev = 0,003
+  CI (99.9%): [1944,327, 1944,333] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.count":
+  81,000 ±(99.9%) 0,001 counts [Sum]
+  (min, avg, max) = (5,000, 5,400, 6,000), stdev = 0,507
+  CI (99.9%): [81,000, 81,000] (assumes normal distribution)
+
+Secondary result "io.grpc.benchmarks.netty.HpackTableSizeBenchmark.encode:gc.time":
+  42,000 ±(99.9%) 0,001 ms [Sum]
+  (min, avg, max) = (2,000, 2,800, 3,000), stdev = 0,414
+  CI (99.9%): [42,000, 42,000] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:02:28
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                          (buckets)  (peerTableBytes)   (workload)  Mode  Cnt     Score    Error   Units
+HpackTableSizeBenchmark.encode                            16                -1  MIXED_SHORT  avgt   15  1279,904 ± 11,629   ns/op
+HpackTableSizeBenchmark.encode:encodedBytes               16                -1  MIXED_SHORT  avgt   15   276,617 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.alloc.rate              16                -1  MIXED_SHORT  avgt   15  1269,384 ± 11,440  MB/sec
+HpackTableSizeBenchmark.encode:gc.alloc.rate.norm         16                -1  MIXED_SHORT  avgt   15  1703,720 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.count                   16                -1  MIXED_SHORT  avgt   15    62,000           counts
+HpackTableSizeBenchmark.encode:gc.time                    16                -1  MIXED_SHORT  avgt   15    33,000               ms
+HpackTableSizeBenchmark.encode                            16                -1  MIXED_LARGE  avgt   15  1484,324 ± 16,868   ns/op
+HpackTableSizeBenchmark.encode:encodedBytes               16                -1  MIXED_LARGE  avgt   15  1428,949 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.alloc.rate              16                -1  MIXED_LARGE  avgt   15  1249,196 ± 14,126  MB/sec
+HpackTableSizeBenchmark.encode:gc.alloc.rate.norm         16                -1  MIXED_LARGE  avgt   15  1944,333 ±  0,002    B/op
+HpackTableSizeBenchmark.encode:gc.count                   16                -1  MIXED_LARGE  avgt   15    61,000           counts
+HpackTableSizeBenchmark.encode:gc.time                    16                -1  MIXED_LARGE  avgt   15    32,000               ms
+HpackTableSizeBenchmark.encode                            64                -1  MIXED_SHORT  avgt   15   960,854 ±  4,963   ns/op
+HpackTableSizeBenchmark.encode:encodedBytes               64                -1  MIXED_SHORT  avgt   15   276,617 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.alloc.rate              64                -1  MIXED_SHORT  avgt   15  1690,803 ±  8,684  MB/sec
+HpackTableSizeBenchmark.encode:gc.alloc.rate.norm         64                -1  MIXED_SHORT  avgt   15  1703,718 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.count                   64                -1  MIXED_SHORT  avgt   15    84,000           counts
+HpackTableSizeBenchmark.encode:gc.time                    64                -1  MIXED_SHORT  avgt   15    44,000               ms
+HpackTableSizeBenchmark.encode                            64                -1  MIXED_LARGE  avgt   15  1201,600 ± 11,451   ns/op
+HpackTableSizeBenchmark.encode:encodedBytes               64                -1  MIXED_LARGE  avgt   15  1428,949 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.alloc.rate              64                -1  MIXED_LARGE  avgt   15  1543,068 ± 14,617  MB/sec
+HpackTableSizeBenchmark.encode:gc.alloc.rate.norm         64                -1  MIXED_LARGE  avgt   15  1944,331 ±  0,003    B/op
+HpackTableSizeBenchmark.encode:gc.count                   64                -1  MIXED_LARGE  avgt   15    77,000           counts
+HpackTableSizeBenchmark.encode:gc.time                    64                -1  MIXED_LARGE  avgt   15    40,000               ms
+HpackTableSizeBenchmark.encode                           128                -1  MIXED_SHORT  avgt   15   921,870 ±  6,608   ns/op
+HpackTableSizeBenchmark.encode:encodedBytes              128                -1  MIXED_SHORT  avgt   15   276,617 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.alloc.rate             128                -1  MIXED_SHORT  avgt   15  1762,337 ± 12,412  MB/sec
+HpackTableSizeBenchmark.encode:gc.alloc.rate.norm        128                -1  MIXED_SHORT  avgt   15  1703,718 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.count                  128                -1  MIXED_SHORT  avgt   15    87,000           counts
+HpackTableSizeBenchmark.encode:gc.time                   128                -1  MIXED_SHORT  avgt   15    45,000               ms
+HpackTableSizeBenchmark.encode                           128                -1  MIXED_LARGE  avgt   15  1133,290 ±  7,303   ns/op
+HpackTableSizeBenchmark.encode:encodedBytes              128                -1  MIXED_LARGE  avgt   15  1428,949 ±  0,001    B/op
+HpackTableSizeBenchmark.encode:gc.alloc.rate             128                -1  MIXED_LARGE  avgt   15  1636,022 ± 10,538  MB/sec
+HpackTableSizeBenchmark.encode:gc.alloc.rate.norm        128                -1  MIXED_LARGE  avgt   15  1944,330 ±  0,003    B/op
+HpackTableSizeBenchmark.encode:gc.count                  128                -1  MIXED_LARGE  avgt   15    81,000           counts
+HpackTableSizeBenchmark.encode:gc.time                   128                -1  MIXED_LARGE  avgt   15    42,000               ms
+
+Benchmark result is saved to benchmarks/hpack-table-size/build/omitted-setting.json
